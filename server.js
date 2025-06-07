@@ -6,7 +6,10 @@ const route = require('./Routes/route.js')
 
 const app = express()
 
-app.use(cors())
+app.use(cors({
+  origin: 'https://allenkirby.vercel.app',
+  methods: ['POST'],
+}))
 
 app.use(express.json())
 app.use((req, res, next) => {
